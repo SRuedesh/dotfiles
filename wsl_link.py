@@ -2,12 +2,12 @@ import os
 from pathlib import Path
 
 path_home = Path.home()
-path_config = Path(path_home, "projects/github/dotfiles")
+path_config = Path(path_home, "dotfiles")
 
 path_list = [
     {
         "src": Path(path_config, "visidata/.visidatarc"),
-        "dst": Path(path_wsl_home, ".visidatarc")
+        "dst": Path(path_home, ".visidatarc")
     },
     {
         "src": Path(path_config, "kickstart.nvim"),
