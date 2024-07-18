@@ -6,6 +6,10 @@ path_config = Path(path_home, "one_drive/github/dotfiles")
 
 path_list = [
     {
+        "src": Path(path_config, "starship/starship.toml"),
+        "dst": Path(path_home, ".config/starship.toml")
+    },
+    {
         "src": Path(path_config, "kickstart.nvim"),
         "dst": Path(path_home, ".config/nvim")
     },
@@ -24,6 +28,10 @@ path_list = [
     {
         "src": Path(path_config, "linter"),
         "dst": Path(path_home, "linter")
+    },
+    {
+        "src": Path(path_config, "powershell/Microsoft.PowerShell_profile.ps1"),
+        "dst": Path(path_home, "one_drive/Documents/PowerShell/Microsoft.PowerShell_profile.ps1")
     }
 ]
 

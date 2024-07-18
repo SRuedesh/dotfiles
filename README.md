@@ -12,4 +12,5 @@ Includes configuration files for:
 To link files, run the following command from an elevated shell:
 ```
 python3 link.py
+wsl python3 wsl_link.py
 ```
