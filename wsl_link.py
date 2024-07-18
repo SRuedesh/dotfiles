@@ -2,28 +2,20 @@ import os
 from pathlib import Path
 
 path_home = Path.home()
-path_config = Path(path_home, "one_drive/github/dotfiles")
+path_config = Path(path_home, "projects/github/dotfiles")
 
 path_list = [
+    {
+        "src": Path(path_config, "visidata/.visidatarc"),
+        "dst": Path(path_wsl_home, ".visidatarc")
+    },
     {
         "src": Path(path_config, "kickstart.nvim"),
         "dst": Path(path_home, ".config/nvim")
     },
     {
-        "src": Path(path_config, ".wezterm.lua"),
-        "dst": Path(path_home, ".wezterm.lua")
-    },
-    {
         "src": Path(path_config, ".radian_profile"),
         "dst": Path(path_home, ".radian_profile")
-    },
-    {
-        "src": Path(path_config, ".glaze-wm"),
-        "dst": Path(path_home, ".glaze-wm")
-    },
-    {
-        "src": Path(path_config, "linter"),
-        "dst": Path(path_home, "linter")
     }
 ]
 

@@ -1,0 +1,24 @@
+# Vim Key Setup
+
+TableSheet.unbindkey("i")
+TableSheet.unbindkey("o")
+TableSheet.unbindkey("U")
+TableSheet.unbindkey("u")
+TableSheet.unbindkey("R")
+TableSheet.unbindkey("r")
+TableSheet.unbindkey("d")
+TableSheet.unbindkey("D")
+TableSheet.unbindkey("^R")
+TableSheet.unbindkey("^")
+TableSheet.unbindkey("gh")
+TableSheet.unbindkey("$")
+
+TableSheet.bindkey("i", "edit-cell")
+TableSheet.bindkey("o", "add-row")
+TableSheet.bindkey("u", "undo-last")
+TableSheet.bindkey("^R", "redo-last")
+TableSheet.bindkey("D", "delete-row")
+TableSheet.bindkey("^", "go-leftmost")
+TableSheet.bindkey("$", "go-rightmost")
+
+

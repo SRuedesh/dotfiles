@@ -191,127 +191,127 @@ for i = 1, 8 do
 end
 
 -- Workspaces
-wezterm.on("gui-startup", function(cmd)
-	local args = {}
-	if cmd then
-		args = cmd.args
-	end
-
-	-- GENERAL WORKSPACES
-	local project_dir = wezterm.home_dir .. "/one_drive/github"
-
-	-- DSS WORKSPACE START
-	-- TAB 1: SHELL
-	local tab, pane, window = mux.spawn_window({
-		workspace = "dss",
-		cwd = project_dir .. "/dss",
-	})
-	tab:set_title("shell")
-
-	-- TAB 2: RADIAN
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/dss",
-		args = { "radian", "." },
-	})
-	tab:set_title("radian")
-
-	-- TAB 3: R
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/dss",
-		args = { "R.exe", "." },
-	})
-	tab:set_title("R")
-
-	-- TAB 4: VIM (default)
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/dss",
-		args = { "nvim", "." },
-	})
-	tab:set_title("vim")
-	-- DSS WORKSPACE END
-
-	-- CONFIG WORKSPACE START
-	-- TAB 1: SHELL
-	local tab, pane, window = mux.spawn_window({
-		workspace = "config",
-		cwd = project_dir .. "/configwin",
-	})
-	tab:set_title("shell")
-
-	-- TAB 2: VIM (default)
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/configwin",
-		args = { "nvim", "." },
-	})
-	tab:set_title("vim")
-	-- CONFIG WORKSPACE END
-
-	-- ABDATAAPI WORKSPACE START
-	-- TAB 1: SHELL
-	local tab, pane, window = mux.spawn_window({
-		workspace = "abdataapi",
-		cwd = project_dir .. "/abdataapi",
-	})
-	tab:set_title("shell")
-
-	-- TAB 2: RADIAN (server)
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/abdataapi/src",
-		-- args = { "radian", "." },
-	})
-	tab:set_title("server")
-
-	-- TAB 3: RADIAN (testing)
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/abdataapi/client",
-		-- args = { "radian", "." },
-	})
-	tab:set_title("testing")
-
-	-- TAB 4: VIM (default)
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/abdataapi",
-	})
-	tab:set_title("vim")
-	-- ABDATAAPI WORKSPACE END
-
-	-- IFX-DSS WORKSPACE START
-	-- TAB 1: SHELL
-	local tab, pane, window = mux.spawn_window({
-		workspace = "ifx-dss",
-		cwd = project_dir .. "/ifx-dss",
-	})
-	tab:set_title("shell")
-
-	-- TAB 2: RADIAN (server)
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/ifx-dss",
-		-- args = { "radian", "." },
-	})
-	tab:set_title("server")
-
-	-- TAB 3: VIM (default)
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/ifx-dss",
-	})
-	tab:set_title("vim")
-	-- IFX-DSS WORKSPACE END
-
-	-- OBSIDIAN WORKSPACE START
-	-- TAB 1: SHELL
-	local tab, pane, window = mux.spawn_window({
-		workspace = "obsidian",
-		cwd = project_dir .. "/obsidian",
-	})
-	tab:set_title("shell")
-
-	-- TAB 2: SHELL
-	local tab = window:spawn_tab({
-		cwd = project_dir .. "/obsidian",
-		args = { "nvim", "main.md" },
-	})
-	tab:set_title("vim")
-	-- CONFIG WORKSPACE END
-end)
+-- wezterm.on("gui-startup", function(cmd)
+-- 	local args = {}
+-- 	if cmd then
+-- 		args = cmd.args
+-- 	end
+--
+-- 	-- GENERAL WORKSPACES
+-- 	local project_dir = wezterm.home_dir .. "/one_drive/github"
+--
+-- 	-- DSS WORKSPACE START
+-- 	-- TAB 1: SHELL
+-- 	local tab, pane, window = mux.spawn_window({
+-- 		workspace = "dss",
+-- 		cwd = project_dir .. "/dss",
+-- 	})
+-- 	tab:set_title("shell")
+--
+-- 	-- TAB 2: RADIAN
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/dss",
+-- 		args = { "radian", "." },
+-- 	})
+-- 	tab:set_title("radian")
+--
+-- 	-- TAB 3: R
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/dss",
+-- 		args = { "R.exe", "." },
+-- 	})
+-- 	tab:set_title("R")
+--
+-- 	-- TAB 4: VIM (default)
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/dss",
+-- 		args = { "nvim", "." },
+-- 	})
+-- 	tab:set_title("vim")
+-- 	-- DSS WORKSPACE END
+--
+-- 	-- CONFIG WORKSPACE START
+-- 	-- TAB 1: SHELL
+-- 	local tab, pane, window = mux.spawn_window({
+-- 		workspace = "config",
+-- 		cwd = project_dir .. "/configwin",
+-- 	})
+-- 	tab:set_title("shell")
+--
+-- 	-- TAB 2: VIM (default)
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/configwin",
+-- 		args = { "nvim", "." },
+-- 	})
+-- 	tab:set_title("vim")
+-- 	-- CONFIG WORKSPACE END
+--
+-- 	-- ABDATAAPI WORKSPACE START
+-- 	-- TAB 1: SHELL
+-- 	local tab, pane, window = mux.spawn_window({
+-- 		workspace = "abdataapi",
+-- 		cwd = project_dir .. "/abdataapi",
+-- 	})
+-- 	tab:set_title("shell")
+--
+-- 	-- TAB 2: RADIAN (server)
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/abdataapi/src",
+-- 		-- args = { "radian", "." },
+-- 	})
+-- 	tab:set_title("server")
+--
+-- 	-- TAB 3: RADIAN (testing)
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/abdataapi/client",
+-- 		-- args = { "radian", "." },
+-- 	})
+-- 	tab:set_title("testing")
+--
+-- 	-- TAB 4: VIM (default)
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/abdataapi",
+-- 	})
+-- 	tab:set_title("vim")
+-- 	-- ABDATAAPI WORKSPACE END
+--
+-- 	-- IFX-DSS WORKSPACE START
+-- 	-- TAB 1: SHELL
+-- 	local tab, pane, window = mux.spawn_window({
+-- 		workspace = "ifx-dss",
+-- 		cwd = project_dir .. "/ifx-dss",
+-- 	})
+-- 	tab:set_title("shell")
+--
+-- 	-- TAB 2: RADIAN (server)
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/ifx-dss",
+-- 		-- args = { "radian", "." },
+-- 	})
+-- 	tab:set_title("server")
+--
+-- 	-- TAB 3: VIM (default)
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/ifx-dss",
+-- 	})
+-- 	tab:set_title("vim")
+-- 	-- IFX-DSS WORKSPACE END
+--
+-- 	-- OBSIDIAN WORKSPACE START
+-- 	-- TAB 1: SHELL
+-- 	local tab, pane, window = mux.spawn_window({
+-- 		workspace = "obsidian",
+-- 		cwd = project_dir .. "/obsidian",
+-- 	})
+-- 	tab:set_title("shell")
+--
+-- 	-- TAB 2: SHELL
+-- 	local tab = window:spawn_tab({
+-- 		cwd = project_dir .. "/obsidian",
+-- 		args = { "nvim", "main.md" },
+-- 	})
+-- 	tab:set_title("vim")
+-- -- 	-- CONFIG WORKSPACE END
+-- end)
 
 return config
