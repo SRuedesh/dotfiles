@@ -1,0 +1,6 @@
+[submodule "kickstart.nvim"]
+	path = kickstart.nvim
+	url = https://github.com/SRuedesh/kickstart.nvim
+[submodule ".glaze-wm"]
+	path = .glaze-wm
+	url = https://github.com/SRuedesh/.glaze-wm
