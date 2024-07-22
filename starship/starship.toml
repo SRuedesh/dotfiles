@@ -1,9 +1,27 @@
+add_newline = true
 palette = "catppuccin_mocha"
 [character]
-# Note the use of Catppuccin color 'maroon'
-success_symbol = "[[_](green) ❯](maroon)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold yellow)"
+
+[directory]
+truncation_length = 4
+style = "bold lavender"
+
+[line_break]
+disabled = false
+
+[username]
+style_user = "bold green"
+style_root = "bold mauve"
+show_always = true
+format = "[$user]($style) "
+
+[hostname]
+ssh_only = false
+format = "on [$hostname](bold maroon) "
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
