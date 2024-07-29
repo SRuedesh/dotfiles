@@ -8,6 +8,11 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+local home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+if home_dir and home_dir:sub(1, 2):upper() == "D:" then
+	config.prefer_egl = true
+end
+
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"

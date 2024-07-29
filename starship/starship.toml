@@ -17,10 +17,10 @@ disabled = false
 style_user = "bold green"
 style_root = "bold mauve"
 show_always = true
-format = "[$user]($style) "
+format = "[$user]($style) in "
 
 [hostname]
-ssh_only = false
+ssh_only = true
 format = "on [$hostname](bold maroon) "
 
 [os.symbols]

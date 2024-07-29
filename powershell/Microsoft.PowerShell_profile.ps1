@@ -22,3 +22,5 @@ Set-Alias oo obsid
 Set-Alias conf config_win
 Set-Alias vim nvim
 Set-Alias vd visidata
+Set-Alias lg lazygit
+Set-Alias dod "Docker Desktop.exe"
