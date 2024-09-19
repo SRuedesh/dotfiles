@@ -1,27 +1,28 @@
 add_newline = true
-palette = "catppuccin_mocha"
+# palette = "catppuccin_mocha"
+palette = "rose-pine-dawn"
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
-vimcmd_symbol = "[❮](bold yellow)"
+success_symbol = "[❯](bold foam)"
+error_symbol = "[❯](bold love)"
+vimcmd_symbol = "[❮](bold gold)"
 
 [directory]
 truncation_length = 4
-style = "bold lavender"
+style = "bold overlay"
 
 [line_break]
 disabled = false
 
 [username]
-style_user = "bold green"
-style_root = "bold mauve"
+style_user = "bold foam"
+style_root = "bold rose"
 show_always = true
 format = "[$user]($style) in "
 
 [hostname]
 ssh_only = true
-format = "on [$hostname](bold maroon) "
+format = "on [$hostname](bold gold) "
 
 [os.symbols]
 Windows = "🤖 "
@@ -59,3 +60,12 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+[palettes.rose-pine-dawn]
+overlay = '#f2e9e1'
+love = '#b4637a'
+gold = '#ea9d34'
+rose = '#d7827e'
+pine = '#286983'
+foam = '#56949f'
+iris = '#907aa9'

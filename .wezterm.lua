@@ -19,13 +19,13 @@ config.window_decorations = "RESIZE"
 
 -- fast quitting
 -- config.window_close_confirmation = "NeverPrompt"
-config.default_workspace = "obsidian"
+-- config.default_workspace = "obsidian"
 
 config.default_prog = { "pwsh.exe", "-NoLogo" }
 
 config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Regular" })
-config.font_size = 14
+config.font_size = 15
 
 -- scrollbar
 config.scrollback_lines = 3000
@@ -33,31 +33,31 @@ config.enable_scroll_bar = false
 config.default_cursor_style = "SteadyBlock"
 
 -- tmuxing
-config.enable_tab_bar = true
-config.tab_bar_at_bottom = true
-config.hide_tab_bar_if_only_one_tab = false
+-- config.enable_tab_bar = true
+-- config.tab_bar_at_bottom = true
+-- config.hide_tab_bar_if_only_one_tab = false
 -- tmux status
-wezterm.on("update-right-status", function(window, _)
-	local SOLID_LEFT_ARROW = ""
-	local ARROW_FOREGROUND = { Foreground = { Color = "#c6a0f6" } }
-	local prefix = ""
-
-	if window:leader_is_active() then
-		prefix = " " .. utf8.char(0x1f30a) -- ocean wave
-		SOLID_LEFT_ARROW = utf8.char(0xe0b2)
-	end
-
-	if window:active_tab():tab_id() ~= 0 then
-		ARROW_FOREGROUND = { Foreground = { Color = "#1e2030" } }
-	end -- arrow color based on if tab is first pane
-
-	window:set_left_status(wezterm.format({
-		{ Background = { Color = "#b7bdf8" } },
-		{ Text = prefix },
-		ARROW_FOREGROUND,
-		{ Text = SOLID_LEFT_ARROW },
-	}))
-end)
+-- wezterm.on("update-right-status", function(window, _)
+-- 	local SOLID_LEFT_ARROW = ""
+-- 	local ARROW_FOREGROUND = { Foreground = { Color = "#c6a0f6" } }
+-- 	local prefix = ""
+--
+-- 	if window:leader_is_active() then
+-- 		prefix = " " .. utf8.char(0x1f30a) -- ocean wave
+-- 		SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+-- 	end
+--
+-- 	if window:active_tab():tab_id() ~= 0 then
+-- 		ARROW_FOREGROUND = { Foreground = { Color = "#1e2030" } }
+-- 	end -- arrow color based on if tab is first pane
+--
+-- 	window:set_left_status(wezterm.format({
+-- 		{ Background = { Color = "#b7bdf8" } },
+-- 		{ Text = prefix },
+-- 		ARROW_FOREGROUND,
+-- 		{ Text = SOLID_LEFT_ARROW },
+-- 	}))
+-- end)
 
 -- background image
 config.window_background_opacity = 0.7
@@ -80,110 +80,110 @@ config.leader = { key = "k", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	-- WORKSPACES
 	-- search workspace
-	{
-		key = "s",
-		mods = "LEADER",
-		action = act.ShowLauncherArgs({
-			flags = "FUZZY|WORKSPACES",
-		}),
-	},
-	-- new workspace
-	{
-		key = "n",
-		mods = "LEADER",
-		action = act.PromptInputLine({
-			description = wezterm.format({
-				{ Attribute = { Intensity = "Bold" } },
-				{ Foreground = { AnsiColor = "Fuchsia" } },
-				{ Text = "Enter name for new workspace" },
-			}),
-			action = wezterm.action_callback(function(window, pane, line)
-				-- line will be `nil` if they hit escape without entering anything
-				-- An empty string if they just hit enter
-				-- Or the actual line of text they wrote
-				if line then
-					window:perform_action(
-						act.SwitchToWorkspace({
-							name = line,
-						}),
-						pane
-					)
-				end
-			end),
-		}),
-	},
-	-- kill tab
-	{
-		key = "x",
-		mods = "LEADER",
-		action = act.CloseCurrentTab({ confirm = true }),
-	},
-	-- new tab (named)
-	{
-		key = "t",
-		mods = "LEADER",
-		action = act.PromptInputLine({
-			description = wezterm.format({
-				{ Attribute = { Intensity = "Bold" } },
-				{ Foreground = { AnsiColor = "Fuchsia" } },
-				{ Text = "Enter name for new tab" },
-			}),
-			action = wezterm.action_callback(function(window, pane, line)
-				-- line will be `nil` if they hit escape without entering anything
-				-- An empty string if they just hit enter
-				-- Or the actual line of text they wrote
-				if line then
-					window:perform_action(act.SpawnTab("CurrentPaneDomain"), pane)
-					window:active_tab():set_title(line)
-				end
-			end),
-		}),
-	},
-	-- zoom pane
-	{
-		key = "z",
-		mods = "LEADER",
-		action = act.TogglePaneZoomState,
-	},
-	{
-		key = "r",
-		mods = "LEADER",
-		action = act.PromptInputLine({
-			description = "Enter new name for tab",
-			action = wezterm.action_callback(function(window, pane, line)
-				-- line will be `nil` if they hit escape without entering anything
-				-- An empty string if they just hit enter
-				-- Or the actual line of text they wrote
-				if line then
-					window:active_tab():set_title(line)
-				end
-			end),
-		}),
-	},
-	-- SPLITS
-	-- horizontal split
-	{
-		key = "-",
-		mods = "LEADER",
-		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	-- close split
-	{
-		key = "w",
-		mods = "LEADER",
-		action = act.CloseCurrentPane({ confirm = true }),
-	},
+	-- {
+	-- 	key = "s",
+	-- 	mods = "LEADER",
+	-- 	action = act.ShowLauncherArgs({
+	-- 		flags = "FUZZY|WORKSPACES",
+	-- 	}),
+	-- },
+	-- -- new workspace
+	-- {
+	-- 	key = "n",
+	-- 	mods = "LEADER",
+	-- 	action = act.PromptInputLine({
+	-- 		description = wezterm.format({
+	-- 			{ Attribute = { Intensity = "Bold" } },
+	-- 			{ Foreground = { AnsiColor = "Fuchsia" } },
+	-- 			{ Text = "Enter name for new workspace" },
+	-- 		}),
+	-- 		action = wezterm.action_callback(function(window, pane, line)
+	-- 			-- line will be `nil` if they hit escape without entering anything
+	-- 			-- An empty string if they just hit enter
+	-- 			-- Or the actual line of text they wrote
+	-- 			if line then
+	-- 				window:perform_action(
+	-- 					act.SwitchToWorkspace({
+	-- 						name = line,
+	-- 					}),
+	-- 					pane
+	-- 				)
+	-- 			end
+	-- 		end),
+	-- 	}),
+	-- },
+	-- -- kill tab
+	-- {
+	-- 	key = "x",
+	-- 	mods = "LEADER",
+	-- 	action = act.CloseCurrentTab({ confirm = true }),
+	-- },
+	-- -- new tab (named)
+	-- {
+	-- 	key = "t",
+	-- 	mods = "LEADER",
+	-- 	action = act.PromptInputLine({
+	-- 		description = wezterm.format({
+	-- 			{ Attribute = { Intensity = "Bold" } },
+	-- 			{ Foreground = { AnsiColor = "Fuchsia" } },
+	-- 			{ Text = "Enter name for new tab" },
+	-- 		}),
+	-- 		action = wezterm.action_callback(function(window, pane, line)
+	-- 			-- line will be `nil` if they hit escape without entering anything
+	-- 			-- An empty string if they just hit enter
+	-- 			-- Or the actual line of text they wrote
+	-- 			if line then
+	-- 				window:perform_action(act.SpawnTab("CurrentPaneDomain"), pane)
+	-- 				window:active_tab():set_title(line)
+	-- 			end
+	-- 		end),
+	-- 	}),
+	-- },
+	-- -- zoom pane
+	-- {
+	-- 	key = "z",
+	-- 	mods = "LEADER",
+	-- 	action = act.TogglePaneZoomState,
+	-- },
+	-- {
+	-- 	key = "r",
+	-- 	mods = "LEADER",
+	-- 	action = act.PromptInputLine({
+	-- 		description = "Enter new name for tab",
+	-- 		action = wezterm.action_callback(function(window, pane, line)
+	-- 			-- line will be `nil` if they hit escape without entering anything
+	-- 			-- An empty string if they just hit enter
+	-- 			-- Or the actual line of text they wrote
+	-- 			if line then
+	-- 				window:active_tab():set_title(line)
+	-- 			end
+	-- 		end),
+	-- 	}),
+	-- },
+	-- -- SPLITS
+	-- -- horizontal split
+	-- {
+	-- 	key = "-",
+	-- 	mods = "LEADER",
+	-- 	action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	-- },
+	-- -- close split
+	-- {
+	-- 	key = "w",
+	-- 	mods = "LEADER",
+	-- 	action = act.CloseCurrentPane({ confirm = true }),
+	-- },
 	-- navigate splits
-	{
-		key = "h",
-		mods = "LEADER",
-		action = act.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "l",
-		mods = "LEADER",
-		action = act.ActivatePaneDirection("Right"),
-	},
+	-- {
+	-- 	key = "h",
+	-- 	mods = "LEADER",
+	-- 	action = act.ActivatePaneDirection("Left"),
+	-- },
+	-- {
+	-- 	key = "l",
+	-- 	mods = "LEADER",
+	-- 	action = act.ActivatePaneDirection("Right"),
+	-- },
 }
 
 for i = 1, 8 do
