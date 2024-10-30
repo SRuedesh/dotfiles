@@ -1,4 +1,4 @@
-# Make sure to include the following in your $PROFILE
+# Make sure to run this in PS first:
 # Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 # Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 

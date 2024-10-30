@@ -1,3 +1,4 @@
+# make sure to run this script with python3 from an elevated shell!!
 import os
 from pathlib import Path
 
@@ -23,7 +24,7 @@ path_list = [
     },
     {
         "src": Path(path_config, "glaze-wm"),
-        "dst": Path(path_home, ".glazr")
+        "dst": Path(path_home, ".glzr")
     },
     {
         "src": Path(path_config, "ptpython"),
