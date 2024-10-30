@@ -1,0 +1,16 @@
+[2m2024-10-11T15:25:12.042744Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 305 column 1, while parsing a block mapping
+[2m2024-10-14T13:31:58.352179Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m At least 1 workspace is required per monitor.
+
+Caused by:
+    No workspace config available to activate workspace.
+[2m2024-10-14T13:32:24.332179Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No displayed workspace.
+[2m2024-10-14T13:32:28.683235Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No displayed workspace.
+[2m2024-10-17T14:02:35.498906Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '4' doesn't exist or is already active.
+[2m2024-10-17T14:03:08.444899Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '2' doesn't exist or is already active.
+[2m2024-10-17T14:07:02.436745Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[6].commands: unexpected argument found
+ at line 146 column 15
+[2m2024-10-17T14:07:19.544163Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[6].commands: unexpected argument found
+ at line 146 column 15
+[2m2024-10-17T14:07:30.478239Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[6].commands: unexpected argument found
+ at line 146 column 15
+[2m2024-10-17T14:08:15.097190Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '3' doesn't exist or is already active.

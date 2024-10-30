@@ -1,6 +1,7 @@
 add_newline = true
 # palette = "catppuccin_mocha"
 palette = "rose-pine-dawn"
+command_timeout = 1000
 
 [character]
 success_symbol = "[❯](bold foam)"
@@ -15,7 +16,7 @@ style = "bold overlay"
 disabled = false
 
 [username]
-style_user = "bold foam"
+style_user = "bold iris"
 style_root = "bold rose"
 show_always = true
 format = "[$user]($style) in "

@@ -14,16 +14,20 @@ path_list = [
         "dst": Path(path_home, ".config/nvim")
     },
     {
-        "src": Path(path_config, ".wezterm.lua"),
+        "src": Path(path_config, "wezterm/.wezterm.lua"),
         "dst": Path(path_home, ".wezterm.lua")
     },
     {
-        "src": Path(path_config, ".radian_profile"),
+        "src": Path(path_config, "radian/.radian_profile"),
         "dst": Path(path_home, ".radian_profile")
     },
     {
-        "src": Path(path_config, ".glaze-wm"),
-        "dst": Path(path_home, ".glaze-wm")
+        "src": Path(path_config, "glaze-wm"),
+        "dst": Path(path_home, ".glazr")
+    },
+    {
+        "src": Path(path_config, "ptpython"),
+        "dst": Path(path_home, ".config/ptpython")
     },
     {
         "src": Path(path_config, "linter"),

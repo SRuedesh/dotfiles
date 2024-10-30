@@ -7,7 +7,6 @@ local config = {}
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
-
 local home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
 if home_dir and home_dir:sub(1, 2):upper() == "D:" then
 	config.prefer_egl = true
