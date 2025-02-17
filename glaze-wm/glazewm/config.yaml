@@ -47,7 +47,7 @@ window_effects:
     # Highlight the window with a colored border.
     # ** Exclusive to Windows 11 due to API limitations.
     border:
-      enabled: true
+      enabled: false
       color: '#8dbcff'
 
     # Remove the title bar from the window's frame. Note that this can
@@ -101,12 +101,12 @@ workspaces:
   - name: 'Misc'
   - name: 'Teams'
   - name: 'Browser'
-  - name: 'Terminal'
+  - name: 'Prim'
   - name: 'Remote'
   - name: 'Mail'
   - name: 'Reference'
-  - name: 'Text'
-  - name: 'Notes'
+  - name: 'Sec'
+  - name: 'Tert'
   - name: 'Media'
 
 window_rules:
@@ -116,6 +116,8 @@ window_rules:
       - window_process: { equals: 'zebar' }
       # Ignores snipping tool windows.
       - window_process: { regex: 'Snipping' }
+      # Ignores pirana spawns
+      - window_process: { equals: 'WindowsTerminal' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
@@ -134,15 +136,18 @@ window_rules:
   - commands: ['move --workspace Teams']
     match:
     - window_process: { regex: 'ms-teams'} # works
+  - commands: ['move --workspace Teams']
+    match:
+    - window_process: { regex: 'ApplicationFrameHost'}
   - commands: ['move --workspace Browser']
     match:
     - window_process: { regex: 'firefox'} # works
-  - commands: ['move --workspace Terminal']
+  - commands: ['move --workspace Prim']
     match:
     - window_process: { regex: 'wezterm'}
   - commands: ['move --workspace Mail']
     match:
-    - window_process: { regex: 'OUTLOOK'} # not working
+    - window_process: { regex: 'olk'} # not working
   - commands: ['move --workspace Reference']
     match:
     - window_process: { regex: 'python'}
@@ -177,19 +182,23 @@ binding_modes:
 keybindings:
   # Shift focus in a given direction.
   - commands: ['focus --direction left']
-    bindings: ['alt+control+lwin+h', 'alt+shift+left']
+    bindings: ['alt+control+lwin+h']
   - commands: ['focus --direction right']
-    bindings: ['alt+control+lwin+l', 'alt+shift+right']
-  # - commands: ['focus --direction up']
-  #   bindings: ['alt+k', 'alt+up']
-  # - commands: ['focus --direction down']
-  #   bindings: ['alt+j', 'alt+down']
+    bindings: ['alt+control+lwin+l']
+  - commands: ['focus --direction up']
+    bindings: ['alt+control+lwin+k']
+  - commands: ['focus --direction down']
+    bindings: ['alt+control+lwin+j']
 
   # Move focused window in a given direction.
   - commands: ['move --direction left']
     bindings: ['alt+control+lwin+shift+h', 'alt+shift+left']
   - commands: ['move --direction right']
     bindings: ['alt+control+lwin+shift+l', 'alt+shift+right']
+  - commands: ['move --direction up']
+    bindings: ['alt+control+lwin+shift+k', 'alt+shift+up']
+  - commands: ['move --direction down']
+    bindings: ['alt+control+lwin+shift+j', 'alt+shift+down']
   # - commands: ['move --direction up']
   #   bindings: ['alt+shift+k', 'alt+shift+up']
   # - commands: ['move --direction down']
@@ -279,7 +288,7 @@ keybindings:
     bindings: ['alt+ctrl+lwin+1']
   - commands: ['focus --workspace Browser']
     bindings: ['alt+ctrl+lwin+2']
-  - commands: ['focus --workspace Terminal']
+  - commands: ['focus --workspace Prim']
     bindings: ['alt+ctrl+lwin+3']
   - commands: ['focus --workspace Remote']
     bindings: ['alt+ctrl+lwin+4']
@@ -287,9 +296,9 @@ keybindings:
     bindings: ['alt+ctrl+lwin+5']
   - commands: ['focus --workspace Reference']
     bindings: ['alt+ctrl+lwin+6']
-  - commands: ['focus --workspace Text']
+  - commands: ['focus --workspace Sec']
     bindings: ['alt+ctrl+lwin+7']
-  - commands: ['focus --workspace Notes']
+  - commands: ['focus --workspace Tert']
     bindings: ['alt+ctrl+lwin+8']
   - commands: ['focus --workspace Media']
     bindings: ['alt+ctrl+lwin+9']
@@ -312,7 +321,7 @@ keybindings:
     bindings: ['alt+ctrl+shift+lwin+1']
   - commands: ['move --workspace Browser', 'focus --workspace Browser']
     bindings: ['alt+ctrl+shift+lwin+2']
-  - commands: ['move --workspace Terminal', 'focus --workspace Terminal']
+  - commands: ['move --workspace Prim', 'focus --workspace Prim']
     bindings: ['alt+ctrl+shift+lwin+3']
   - commands: ['move --workspace Remote', 'focus --workspace Remote']
     bindings: ['alt+ctrl+shift+lwin+4']
@@ -320,9 +329,9 @@ keybindings:
     bindings: ['alt+ctrl+shift+lwin+5']
   - commands: ['move --workspace Reference', 'focus --workspace Reference']
     bindings: ['alt+ctrl+shift+lwin+6']
-  - commands: ['move --workspace Text', 'focus --workspace Text']
+  - commands: ['move --workspace Sec', 'focus --workspace Sec']
     bindings: ['alt+ctrl+shift+lwin+7']
-  - commands: ['move --workspace Notes', 'focus --workspace Notes']
+  - commands: ['move --workspace Tert', 'focus --workspace Tert']
     bindings: ['alt+ctrl+shift+lwin+8']
   - commands: ['move --workspace Media', 'focus --workspace Media']
     bindings: ['alt+ctrl+shift+lwin+9']

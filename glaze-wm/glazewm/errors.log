@@ -14,3 +14,38 @@ Caused by:
 [2m2024-10-17T14:07:30.478239Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[6].commands: unexpected argument found
  at line 146 column 15
 [2m2024-10-17T14:08:15.097190Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '3' doesn't exist or is already active.
+[2m2025-02-04T09:07:06.659047Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Text' doesn't exist or is already active.
+[2m2025-02-04T09:24:03.855874Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Notes' doesn't exist or is already active.
+[2m2025-02-04T09:24:09.420467Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Notes' doesn't exist or is already active.
+[2m2025-02-04T09:24:12.466042Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Notes' doesn't exist or is already active.
+[2m2025-02-04T16:17:09.336818Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Terminal' doesn't exist or is already active.
+[2m2025-02-05T09:36:58.803017Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No workspace config available to activate workspace.
+[2m2025-02-05T10:50:10.858653Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No displayed workspace.
+[2m2025-02-05T10:50:17.254830Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to get workspace of nearest monitor.
+[2m2025-02-05T10:50:19.185791Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to get workspace of nearest monitor.
+[2m2025-02-05T10:50:33.218408Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No displayed workspace.
+[2m2025-02-05T10:50:38.152113Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No displayed workspace.
+[2m2025-02-05T10:51:35.653960Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No displayed workspace.
+[2m2025-02-05T12:46:13.538133Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No displayed workspace.
+[2m2025-02-06T08:00:08.571037Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:11.626086Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:13.019338Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:14.268521Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:15.204649Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:16.069856Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:16.569032Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:16.856785Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:17.486308Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:20.731547Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:26.095979Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:27.218258Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:32.482110Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-02-06T08:00:33.687987Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-02-06T08:00:36.486250Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-02-07T07:44:58.909564Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Terminal' doesn't exist or is already active.
+[2m2025-02-07T07:46:21.164825Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Terminal' doesn't exist or is already active.
+[2m2025-02-11T11:52:55.508207Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Terminal' doesn't exist or is already active.
+[2m2025-02-11T13:01:00.162645Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Terminal' doesn't exist or is already active.
+[2m2025-02-13T10:31:22.733470Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Terminal' doesn't exist or is already active.
+[2m2025-02-13T16:03:46.891204Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Terminal' doesn't exist or is already active.
+[2m2025-02-14T03:12:26.227078Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
