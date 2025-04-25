@@ -49,3 +49,18 @@ Caused by:
 [2m2025-02-13T10:31:22.733470Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Terminal' doesn't exist or is already active.
 [2m2025-02-13T16:03:46.891204Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name 'Terminal' doesn't exist or is already active.
 [2m2025-02-14T03:12:26.227078Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-02-19T07:15:16.372997Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-02-19T07:26:49.827392Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-02-19T07:26:50.500532Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-02-24T12:53:39.425110Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m At least 1 workspace is required per monitor.
+
+Caused by:
+    No workspace config available to activate workspace.
+[2m2025-02-24T12:54:27.550293Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-02-24T12:54:30.399981Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-02-24T12:54:41.110708Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-02-24T13:01:39.812873Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No displayed workspace.
+[2m2025-03-07T08:36:30.562151Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2025-03-07T11:51:38.309074Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-03-07T11:51:50.138378Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2025-04-22T15:08:51.448594Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.

@@ -17,7 +17,9 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
 
-resurrect.periodic_save({
+-- Set some directory where Wezterm has write access
+-- resurrect.state_manager.change_state_save_dir("~/")
+resurrect.state_manager.periodic_save({
 	interval_seconds = 60,
 	save_workspace = true,
 	save_windows = true,
@@ -93,7 +95,6 @@ wezterm.on("smart_workspace_switcher.workspace_switcher.created", function(windo
 	local workspace_state = resurrect.workspace_state
 
 	workspace_state.restore_workspace(resurrect.load_state(label, "workspace"), {
-		window = window,
 		relative = true,
 		restore_text = true,
 		on_pane_restore = resurrect.tab_state.default_on_pane_restore,
@@ -130,22 +131,16 @@ config.keys = {
 		key = "W",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
-			resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+			resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
 			resurrect.window_state.save_window_action()
 		end),
-	},
-	-- switch workspase
-	{
-		key = "s",
-		mods = "LEADER",
-		action = workspace_switcher.switch_workspace(),
 	},
 	-- LOAD
 	{
 		key = "L",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
-			resurrect.fuzzy_load(win, pane, function(id, label)
+			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
 				local type = string.match(id, "^([^/]+)") -- match before '/'
 				id = string.match(id, "([^/]+)$") -- match after '/'
 				id = string.match(id, "(.+)%..+$") -- remove file extention
@@ -155,16 +150,31 @@ config.keys = {
 					on_pane_restore = resurrect.tab_state.default_on_pane_restore,
 				}
 				if type == "workspace" then
-					local state = resurrect.load_state(id, "workspace")
+					local state = resurrect.state_manager.load_state(id, "workspace")
 					resurrect.workspace_state.restore_workspace(state, opts)
 				elseif type == "window" then
-					local state = resurrect.load_state(id, "window")
+					local state = resurrect.state_manager.load_state(id, "window")
 					resurrect.window_state.restore_window(pane:window(), state, opts)
 				elseif type == "tab" then
-					local state = resurrect.load_state(id, "tab")
+					local state = resurrect.state_manager.load_state(id, "tab")
 					resurrect.tab_state.restore_tab(pane:tab(), state, opts)
 				end
 			end)
+		end),
+	},
+	-- DELETE
+	{
+		key = "d",
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id)
+				resurrect.state_manager.delete_state(id)
+			end, {
+				title = "Delete State",
+				description = "Select State to Delete and press Enter = accept, Esc = cancel, / = filter",
+				fuzzy_description = "Search State to Delete: ",
+				is_fuzzy = true,
+			})
 		end),
 	},
 	-- new workspace
@@ -225,20 +235,6 @@ config.keys = {
 		mods = "LEADER",
 		action = act.TogglePaneZoomState,
 	},
-	{
-		key = "d",
-		mods = "LEADER",
-		action = wezterm.action_callback(function(win, pane)
-			resurrect.fuzzy_load(win, pane, function(id)
-				resurrect.delete_state(id)
-			end, {
-				title = "Delete State",
-				description = "Select State to Delete and press Enter = accept, Esc = cancel, / = filter",
-				fuzzy_description = "Search State to Delete: ",
-				is_fuzzy = true,
-			})
-		end),
-	},
 	-- rename tab
 	{
 		key = "r",
@@ -260,7 +256,7 @@ config.keys = {
 			action = wezterm.action_callback(function(window, pane, line)
 				if line then
 					wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
-					resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+					resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
 				end
 			end),
 		}),
@@ -268,12 +264,12 @@ config.keys = {
 	-- SPLITS
 	-- horizontal split
 	{
-		key = "%",
+		key = "H",
 		mods = "LEADER",
 		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		key = '"',
+		key = "V",
 		mods = "LEADER",
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},

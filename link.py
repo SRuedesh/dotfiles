@@ -27,10 +27,6 @@ path_list = [
         "dst": Path(path_home, ".glzr")
     },
     {
-        "src": Path(path_config, "ptpython"),
-        "dst": Path(path_home, ".config/ptpython")
-    },
-    {
         "src": Path(path_config, "linter"),
         "dst": Path(path_home, "linter")
     },

@@ -6,10 +6,6 @@ path_config = Path(path_home, "dotfiles")
 
 path_list = [
     {
-        "src": Path(path_config, "visidata/.visidatarc"),
-        "dst": Path(path_home, ".visidatarc")
-    },
-    {
         "src": Path(path_config, "kickstart.nvim"),
         "dst": Path(path_home, ".config/nvim")
     },

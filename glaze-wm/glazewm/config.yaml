@@ -98,16 +98,58 @@ window_behavior:
       shown_on_top: false
 
 workspaces:
-  - name: 'Misc'
-  - name: 'Teams'
-  - name: 'Browser'
-  - name: 'Prim'
-  - name: 'Remote'
-  - name: 'Mail'
-  - name: 'Reference'
-  - name: 'Sec'
-  - name: 'Tert'
-  - name: 'Media'
+  - name: '1'
+    display_name: 'Misc'
+    bind_to_monitor: 1
+    keep_alive: false
+  - name: '2'
+    display_name: 'Teams'
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: '3'
+    display_name: 'Browser'
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: '4'
+    display_name: 'Primary'
+    bind_to_monitor: 1
+    keep_alive: true
+  - name: '5'
+    display_name: 'Remote'
+    bind_to_monitor: 1
+    keep_alive: false
+  - name: '6'
+    display_name: 'Mail'
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: '7'
+    display_name: 'Reference'
+    bind_to_monitor: 1
+    keep_alive: false
+  - name: '8'
+    display_name: 'Secondary'
+    bind_to_monitor: 1
+    keep_alive: false
+  - name: '9'
+    display_name: 'Tertiary'
+    bind_to_monitor: 1
+    keep_alive: false
+  - name: '10'
+    display_name: 'Media'
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: '11'
+    display_name: 'Monitor'
+    bind_to_monitor: 1
+    keep_alive: false
+  - name: '12'
+    display_name: 'Notes'
+    bind_to_monitor: 1
+    keep_alive: false
+  - name: '13'
+    display_name: 'Files'
+    bind_to_monitor: 1
+    keep_alive: false
 
 window_rules:
   - commands: ['ignore']
@@ -130,30 +172,36 @@ window_rules:
         window_title: { regex: '.*? - Peek' }
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper' }
-  - commands: ['move --workspace Misc']
+  - commands: ['move --workspace 1']
     match:
     - window_process: { regex: 'ApplicationFrameHost'}
-  - commands: ['move --workspace Teams']
+  - commands: ['move --workspace 2']
     match:
     - window_process: { regex: 'ms-teams'} # works
-  - commands: ['move --workspace Teams']
+  - commands: ['move --workspace 2']
     match:
     - window_process: { regex: 'ApplicationFrameHost'}
-  - commands: ['move --workspace Browser']
+  - commands: ['move --workspace 3']
     match:
-    - window_process: { regex: 'firefox'} # works
-  - commands: ['move --workspace Prim']
+    - window_process: { regex: 'firefox|brave'} # works
+  - commands: ['move --workspace 4']
     match:
     - window_process: { regex: 'wezterm'}
-  - commands: ['move --workspace Mail']
+  - commands: ['move --workspace 6']
     match:
     - window_process: { regex: 'olk'} # not working
-  - commands: ['move --workspace Reference']
+  - commands: ['move --workspace 7']
     match:
     - window_process: { regex: 'python'}
-  - commands: ['move --workspace Media']
+  - commands: ['move --workspace 10']
     match:
     - window_process: { regex: 'Spotify'}
+  - commands: ['move --workspace 11']
+    match:
+    - window_process: { regex: 'obs64|StreamDeck'}
+  - commands: ['move --workspace 7']
+    match:
+    - window_process: { regex: 'heidisql'}
 
 
 binding_modes:
@@ -272,36 +320,42 @@ keybindings:
   #   bindings: ['alt+enter']
 
   # Focus the next/previous workspace defined in `workspaces` config.
-  # - commands: ['focus --next-workspace']
-  #   bindings: ['alt+s']
-  # - commands: ['focus --prev-workspace']
-  #   bindings: ['alt+a']
+  - commands: ['focus --next-workspace']
+    bindings: ['alt+s']
+  - commands: ['focus --prev-workspace']
+    bindings: ['alt+a']
 
   # Focus the workspace that last had focus.
   # - commands: ['focus --recent-workspace']
   #   bindings: ['alt+d']
 
   # Change focus to a workspace defined in `workspaces` config.
-  - commands: ['focus --workspace Misc']
+  - commands: ['focus --workspace 1']
     bindings: ['alt+ctrl+lwin+0']
-  - commands: ['focus --workspace Teams']
+  - commands: ['focus --workspace 2']
     bindings: ['alt+ctrl+lwin+1']
-  - commands: ['focus --workspace Browser']
+  - commands: ['focus --workspace 3']
     bindings: ['alt+ctrl+lwin+2']
-  - commands: ['focus --workspace Prim']
+  - commands: ['focus --workspace 4']
     bindings: ['alt+ctrl+lwin+3']
-  - commands: ['focus --workspace Remote']
+  - commands: ['focus --workspace 5']
     bindings: ['alt+ctrl+lwin+4']
-  - commands: ['focus --workspace Mail']
+  - commands: ['focus --workspace 6']
     bindings: ['alt+ctrl+lwin+5']
-  - commands: ['focus --workspace Reference']
+  - commands: ['focus --workspace 7']
     bindings: ['alt+ctrl+lwin+6']
-  - commands: ['focus --workspace Sec']
+  - commands: ['focus --workspace 8']
     bindings: ['alt+ctrl+lwin+7']
-  - commands: ['focus --workspace Tert']
+  - commands: ['focus --workspace 9']
     bindings: ['alt+ctrl+lwin+8']
-  - commands: ['focus --workspace Media']
+  - commands: ['focus --workspace 10']
     bindings: ['alt+ctrl+lwin+9']
+  - commands: ['focus --workspace 11']
+    bindings: ['alt+ctrl+lwin+b']
+  - commands: ['focus --workspace 12']
+    bindings: ['alt+ctrl+lwin+c']
+  - commands: ['focus --workspace 13']
+    bindings: ['alt+ctrl+lwin+d']
 
   # Move the focused window's parent workspace to a monitor in a given
   # direction.
@@ -315,23 +369,29 @@ keybindings:
   #   bindings: ['alt+shift+lwin+ctrl+k']
 
   # Move focused window to a workspace defined in `workspaces` config.
-  - commands: ['move --workspace Misc', 'focus --workspace Misc']
+  - commands: ['move --workspace 1', 'focus --workspace 1']
     bindings: ['alt+ctrl+shift+lwin+0']
-  - commands: ['move --workspace Teams', 'focus --workspace Teams']
+  - commands: ['move --workspace 2', 'focus --workspace 2']
     bindings: ['alt+ctrl+shift+lwin+1']
-  - commands: ['move --workspace Browser', 'focus --workspace Browser']
+  - commands: ['move --workspace 3', 'focus --workspace 3']
     bindings: ['alt+ctrl+shift+lwin+2']
-  - commands: ['move --workspace Prim', 'focus --workspace Prim']
+  - commands: ['move --workspace 4', 'focus --workspace 4']
     bindings: ['alt+ctrl+shift+lwin+3']
-  - commands: ['move --workspace Remote', 'focus --workspace Remote']
+  - commands: ['move --workspace 5', 'focus --workspace 5']
     bindings: ['alt+ctrl+shift+lwin+4']
-  - commands: ['move --workspace Mail', 'focus --workspace Mail']
+  - commands: ['move --workspace 6', 'focus --workspace 6']
     bindings: ['alt+ctrl+shift+lwin+5']
-  - commands: ['move --workspace Reference', 'focus --workspace Reference']
+  - commands: ['move --workspace 7', 'focus --workspace 7']
     bindings: ['alt+ctrl+shift+lwin+6']
-  - commands: ['move --workspace Sec', 'focus --workspace Sec']
+  - commands: ['move --workspace 8', 'focus --workspace 8']
     bindings: ['alt+ctrl+shift+lwin+7']
-  - commands: ['move --workspace Tert', 'focus --workspace Tert']
+  - commands: ['move --workspace 9', 'focus --workspace 9']
     bindings: ['alt+ctrl+shift+lwin+8']
-  - commands: ['move --workspace Media', 'focus --workspace Media']
+  - commands: ['move --workspace 10', 'focus --workspace 10']
     bindings: ['alt+ctrl+shift+lwin+9']
+  - commands: ['move --workspace 11', 'focus --workspace 11']
+    bindings: ['alt+ctrl+shift+lwin+b']
+  - commands: ['move --workspace 12', 'focus --workspace 12']
+    bindings: ['alt+ctrl+shift+lwin+c']
+  - commands: ['move --workspace 13', 'focus --workspace 13']
+    bindings: ['alt+ctrl+shift+lwin+d']

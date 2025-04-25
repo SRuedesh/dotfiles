@@ -155,19 +155,6 @@
                 </div>
               )}
 
-              {output.cpu && (
-                <div className="cpu">
-                  <i className="nf nf-oct-cpu"></i>
-
-                  {/* Change the text color if the CPU usage is high. */}
-                  <span
-                    className={output.cpu.usage > 85 ? 'high-usage' : ''}
-                  >
-                    {Math.round(output.cpu.usage)}%
-                  </span>
-                </div>
-              )}
-
               {output.weather && (
                 <div className="weather">
                   {getWeatherIcon(output.weather)}
