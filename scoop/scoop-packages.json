@@ -1,0 +1,172 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2025-06-03T10:30:25+02:00",
+            "Manifests": 1389
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2025-06-03T10:30:09+02:00",
+            "Manifests": 2166
+        }
+    ],
+    "apps": [
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-02-28T16:18:09.114967+01:00",
+            "Name": "7zip",
+            "Version": "24.09"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-16T12:36:41.7164417+02:00",
+            "Name": "bitwarden-cli",
+            "Version": "2025.4.0"
+        },
+        {
+            "Source": "extras",
+            "Info": "",
+            "Updated": "2025-03-07T08:30:59.8900484+01:00",
+            "Name": "brave",
+            "Version": "1.76.73"
+        },
+        {
+            "Source": "extras",
+            "Info": "",
+            "Updated": "2025-05-16T11:42:49.222966+02:00",
+            "Name": "bruno",
+            "Version": "2.3.0"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-16T13:53:39.0556138+02:00",
+            "Name": "btop",
+            "Version": "1.0.4"
+        },
+        {
+            "Source": null,
+            "Info": "",
+            "Updated": "2025-03-18T17:01:20.7481721+01:00",
+            "Name": "firefox",
+            "Version": "136.0"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-16T11:42:51.051388+02:00",
+            "Name": "fzf",
+            "Version": "0.62.0"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-16T11:43:29.4351651+02:00",
+            "Name": "go",
+            "Version": "1.24.3"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-16T11:43:32.6156241+02:00",
+            "Name": "golangci-lint",
+            "Version": "2.1.6"
+        },
+        {
+            "Source": "extras",
+            "Info": "",
+            "Updated": "2025-03-07T09:25:18.4429932+01:00",
+            "Name": "heidisql",
+            "Version": "12.10"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-30T14:34:14.8377247+02:00",
+            "Name": "innounp",
+            "Version": "2.64.4"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-16T11:43:33.7783888+02:00",
+            "Name": "just",
+            "Version": "1.40.0"
+        },
+        {
+            "Source": "extras",
+            "Info": "",
+            "Updated": "2025-05-16T11:43:36.0311419+02:00",
+            "Name": "lazygit",
+            "Version": "0.50.0"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-16T11:43:42.1821437+02:00",
+            "Name": "neovim",
+            "Version": "0.11.1"
+        },
+        {
+            "Source": "extras",
+            "Info": "",
+            "Updated": "2025-05-16T11:44:09.3348329+02:00",
+            "Name": "obsidian",
+            "Version": "1.8.10"
+        },
+        {
+            "Source": "extras",
+            "Info": "",
+            "Updated": "2025-05-16T11:44:35.1827601+02:00",
+            "Name": "quarto",
+            "Version": "1.7.31"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-30T14:34:35.9091008+02:00",
+            "Name": "R",
+            "Version": "4.5.0"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-06-03T13:55:04.7301187+02:00",
+            "Name": "Rtools",
+            "Version": "4.5.6536.6492"
+        },
+        {
+            "Source": "extras",
+            "Info": "",
+            "Updated": "2025-03-24T09:12:59.6525555+01:00",
+            "Name": "sqlitebrowser",
+            "Version": "3.13.1"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-05-16T11:44:36.8569835+02:00",
+            "Name": "starship",
+            "Version": "1.23.0"
+        },
+        {
+            "Source": "extras",
+            "Info": "",
+            "Updated": "2025-05-16T11:45:01.5882605+02:00",
+            "Name": "vscode",
+            "Version": "1.100.2"
+        },
+        {
+            "Source": "main",
+            "Info": "",
+            "Updated": "2025-02-28T16:19:30.8750126+01:00",
+            "Name": "zoxide",
+            "Version": "0.9.7"
+        }
+    ]
+}

@@ -19,6 +19,10 @@ path_list = [
         "dst": Path(path_home, ".wezterm.lua")
     },
     {
+        "src": Path(path_config, "wezterm"),
+        "dst": Path(path_home, ".config/wezterm")
+    },
+    {
         "src": Path(path_config, "radian/.radian_profile"),
         "dst": Path(path_home, ".radian_profile")
     },

@@ -125,7 +125,9 @@
 
         return (
           <div className="app">
-            <div className="left">
+            <div className="left">{output.date?.formatted}</div>
+
+            <div className="center">
               {output.glazewm && (
                 <div className="workspaces">
                   {output.glazewm.currentWorkspaces.map(workspace => (
@@ -145,7 +147,6 @@
               )}
             </div>
 
-            <div className="center">{output.date?.formatted}</div>
 
             <div className="right">
               {output.memory && (

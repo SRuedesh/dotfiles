@@ -10,6 +10,14 @@ function obsid {
 	cd ~/one_drive/github/obsidian 
 	nvim main.md
 }
+function obsid_note {
+	cd ~/one_drive/github/obsidian 
+	nvim main.md -c "ObsidianNew"
+}
+function obsid_daily {
+	cd ~/one_drive/github/obsidian 
+	nvim main.md -c "ObsidianDailies"
+}
 function config_win {
 	cd ~/one_drive/github/dotfiles
         nvim .
@@ -28,8 +36,16 @@ function Invoke-Starship-PreCommand {
     $host.ui.Write($prompt)
 }
 
+function cp_ssh {
+    bw get password ssh | clip
+}
+
+Set-Alias cpssh cp_ssh
 Set-Alias gh cd_gh
 Set-Alias oo obsid
+Set-Alias ono obsid_note
+Set-Alias odo obsid_daily
+
 Set-Alias conf config_win
 Set-Alias vim nvim
 Set-Alias lg lazygit
