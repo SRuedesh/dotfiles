@@ -23,10 +23,6 @@ path_list = [
         "dst": Path(path_home, ".config/wezterm")
     },
     {
-        "src": Path(path_config, "radian/.radian_profile"),
-        "dst": Path(path_home, ".radian_profile")
-    },
-    {
         "src": Path(path_config, "glaze-wm"),
         "dst": Path(path_home, ".glzr")
     },

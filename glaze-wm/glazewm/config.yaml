@@ -158,8 +158,6 @@ window_rules:
       - window_process: { equals: 'zebar' }
       # Ignores snipping tool windows.
       - window_process: { regex: 'Snipping' }
-      # Ignores pirana spawns
-      - window_process: { equals: 'WindowsTerminal' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
@@ -193,6 +191,9 @@ window_rules:
   - commands: ['move --workspace 4']
     match:
     - window_process: { regex: 'heidisql'}
+  - commands: ['move --workspace 12']
+    match:
+    - window_process: { equals: 'WindowsTerminal'}
 
 
 binding_modes:
