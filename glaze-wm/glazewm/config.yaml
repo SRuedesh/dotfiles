@@ -178,7 +178,7 @@ window_rules:
     - window_process: { regex: 'ApplicationFrameHost'}
   - commands: ['move --workspace 3']
     match:
-    - window_process: { regex: 'firefox|brave'} # works
+    - window_process: { regex: 'firefox|brave|zen'} # works
   - commands: ['move --workspace 6']
     match:
     - window_process: { regex: 'olk'}
@@ -188,9 +188,9 @@ window_rules:
   - commands: ['move --workspace 1']
     match:
     - window_process: { regex: 'obs64|StreamDeck'}
-  - commands: ['move --workspace 4']
+  - commands: ['move --workspace 13']
     match:
-    - window_process: { regex: 'heidisql'}
+    - window_process: { regex: 'FPilot'}
   - commands: ['move --workspace 12']
     match:
     - window_process: { equals: 'WindowsTerminal'}
@@ -246,13 +246,13 @@ keybindings:
 
   # Resize focused window by a percentage or pixel amount.
   - commands: ['resize --width -10%']
-    bindings: ['alt+control+lwin+,']
-  - commands: ['resize --width +10%']
-    bindings: ['alt+control+lwin+.']
-  - commands: ['resize --height +2%']
     bindings: ['alt+o']
-  - commands: ['resize --height -2%']
+  - commands: ['resize --width +10%']
     bindings: ['alt+i']
+  # - commands: ['resize --height +2%']
+  #   bindings: ['alt+o']
+  # - commands: ['resize --height -2%']
+  #   bindings: ['alt+i']
 
   # As an alternative to the resize keybindings above, resize mode enables
   # resizing via arrow keys or HJKL. The binding mode is defined above with

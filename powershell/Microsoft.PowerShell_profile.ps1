@@ -5,21 +5,21 @@ Set-PSReadlineOption -PredictionViewStyle ListView
 Set-PSReadlineOption -EditMode vi
 
 # Custom Aliases
-function cd_gh { cd ~/one_drive/github }
+function cd_gh { cd ~/local_data/projects }
 function obsid {
-	cd ~/one_drive/github/obsidian 
+	cd ~/local_data/utils/obsidian 
 	nvim main.md
 }
 function obsid_note {
-	cd ~/one_drive/github/obsidian 
+	cd ~/local_data/utils/obsidian 
 	nvim main.md -c "ObsidianNew"
 }
 function obsid_daily {
-	cd ~/one_drive/github/obsidian 
+	cd ~/local_data/utils/obsidian 
 	nvim main.md -c "ObsidianDailies"
 }
 function config_win {
-	cd ~/one_drive/github/dotfiles
+	cd ~/local_data/utils/dotfiles
         nvim .
 }
 function get_window_names {

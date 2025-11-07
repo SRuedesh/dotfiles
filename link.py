@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 path_home = Path.home()
-path_config = Path(path_home, "one_drive/github/dotfiles")
+path_config = Path(path_home, "local_data/utils/dotfiles")
 
 path_list = [
     {
@@ -32,7 +32,7 @@ path_list = [
     },
     {
         "src": Path(path_config, "powershell/Microsoft.PowerShell_profile.ps1"),
-        "dst": Path(path_home, "one_drive/Documents/PowerShell/Microsoft.PowerShell_profile.ps1")
+        "dst": Path(path_home, "Documents/PowerShell/Microsoft.PowerShell_profile.ps1")
     }
 ]
 
